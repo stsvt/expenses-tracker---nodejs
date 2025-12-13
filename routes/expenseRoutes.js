@@ -3,11 +3,11 @@ const expenseController = require('../controllers/expenseController');
 
 const router = express.Router();
 
-router.param('id', expenseController.checkID);
 router
   .route('/')
   .get(expenseController.getExpenses)
-  .post(expenseController.checkBody, expenseController.addExpense);
+  .post(expenseController.addExpense)
+  .delete(expenseController.deleteAllExpenses);
 
 router
   .route('/:id')
