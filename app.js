@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 app.use(express.json());
+app.set('query parser', 'extended');
 
 app.use('/api/v1/expenses', expenseRouter);
 
