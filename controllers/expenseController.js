@@ -11,6 +11,13 @@ exports.getExpenses = async (req, res) => {
 
     let query = Expense.find(JSON.parse(queryStr));
 
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      query = query.sort(sortBy);
+    } else {
+      query = query.sort({ createdAt: -1 });
+    }
+
     const expenses = await query;
 
     res.status(200).json({
