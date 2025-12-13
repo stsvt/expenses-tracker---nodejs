@@ -1,1 +1,122 @@
-[{"id":4,"description":"Buying in Sportshop","category":"Sport","price":5555},{"id":5,"description":"Buying in Sportshop","category":"Sport","price":22000}]
+[
+  {
+    "description": "Headphones at Comfy",
+    "category": "electronics",
+    "amount": 1750,
+    "date": "2025-11-10"
+  },
+  {
+    "description": "Grocery shopping at Silpo",
+    "category": "food",
+    "amount": 840.5,
+    "date": "2025-11-11"
+  },
+  {
+    "description": "Taxi to city center",
+    "category": "transport",
+    "amount": 120,
+    "date": "2025-11-12"
+  },
+  {
+    "description": "Cinema tickets (Dune 2)",
+    "category": "entertainment",
+    "amount": 400,
+    "date": "2025-11-12"
+  },
+  {
+    "description": "Internet bill payment",
+    "category": "utilities",
+    "amount": 250,
+    "date": "2025-11-15"
+  },
+  {
+    "description": "Coffee and croissant",
+    "category": "food",
+    "amount": 110,
+    "date": "2025-11-16"
+  },
+  {
+    "description": "Gym membership",
+    "category": "health",
+    "amount": 950,
+    "date": "2025-11-17"
+  },
+  {
+    "description": "Fuel at gas station",
+    "category": "transport",
+    "amount": 1200,
+    "date": "2025-11-18"
+  },
+  {
+    "description": "New mechanical keyboard",
+    "category": "electronics",
+    "amount": 2100,
+    "date": "2025-11-20"
+  },
+  {
+    "description": "Lunch at restaurant",
+    "category": "food",
+    "amount": 185,
+    "date": "2025-11-21"
+  },
+  {
+    "description": "English course fee",
+    "category": "education",
+    "amount": 3000,
+    "date": "2025-11-22"
+  },
+  {
+    "description": "Birthday gift",
+    "category": "gifts",
+    "amount": 1500,
+    "date": "2025-11-25"
+  },
+  {
+    "description": "Spotify subscription",
+    "category": "entertainment",
+    "amount": 150,
+    "date": "2025-11-26"
+  },
+  {
+    "description": "Vitamins and medicine",
+    "category": "health",
+    "amount": 450,
+    "date": "2025-11-28"
+  },
+  {
+    "description": "Winter jacket",
+    "category": "clothing",
+    "amount": 3200,
+    "date": "2025-11-29"
+  },
+  {
+    "description": "Train ticket (Lviv-Kyiv)",
+    "category": "transport",
+    "amount": 650,
+    "date": "2025-12-01"
+  },
+  {
+    "description": "Mobile phone top-up",
+    "category": "utilities",
+    "amount": 200,
+    "date": "2025-12-02"
+  },
+  {
+    "description": "Programming book",
+    "category": "education",
+    "amount": 600,
+    "date": "2025-12-03"
+  },
+  {
+    "description": "Supermarket ATB",
+    "category": "food",
+    "amount": 320,
+    "date": "2025-12-05"
+  },
+  {
+    "description": "Phone repair",
+    "category": "electronics",
+    "amount": 800,
+    "date": "2025-12-06"
+  }
+]

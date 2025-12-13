@@ -15,7 +15,7 @@ exports.getExpenses = async (req, res) => {
       const sortBy = req.query.sort.split(',').join(' ');
       query = query.sort(sortBy);
     } else {
-      query = query.sort({ createdAt: -1 });
+      query = query.sort('-createdAt');
     }
 
     if (req.query.fields) {
@@ -25,10 +25,23 @@ exports.getExpenses = async (req, res) => {
       query = query.select('-__v');
     }
 
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 100;
+    const skip = (page - 1) * limit;
+
+    query = query.skip(skip).limit(limit);
+
+    if (req.query.page) {
+      const numExpenses = await Expense.countDocuments();
+      if (skip >= numExpenses) throw new Error('This page does not exist');
+    }
+
     const expenses = await query;
 
     res.status(200).json({
       status: 'success',
+      page,
+      limit,
       results: expenses.length,
       data: { expenses },
     });
