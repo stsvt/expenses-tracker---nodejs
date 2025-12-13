@@ -1,22 +1,33 @@
 const mongoose = require('mongoose');
 
-const schema = new mongoose.Schema({
-  category: {
-    type: String,
-    required: [true, 'Category is required'],
-    maxLength: 50,
-    trim: true,
+const schema = new mongoose.Schema(
+  {
+    category: {
+      type: String,
+      required: [true, 'Category is required'],
+      maxLength: 50,
+      trim: true,
+    },
+    description: {
+      type: String,
+      maxLength: 300,
+    },
+    amount: {
+      type: Number,
+      required: [true, 'Amount is required'],
+      min: 0,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
   },
-  description: {
-    type: String,
-    maxLength: 300,
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   },
-  price: {
-    type: Number,
-    required: [true, 'Price is required'],
-    min: 0,
-  },
-});
+);
 
 const Expense = mongoose.model('Expense', schema);
 
