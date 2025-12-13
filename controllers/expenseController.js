@@ -4,7 +4,7 @@ const expenses = JSON.parse(fs.readFileSync('./data/expenses.json', 'utf-8'));
 
 exports.checkID = (req, res, next, val) => {
   const id = +req.params.id;
-  const expense = expenses.find((expense) => expense.id === id);
+  const expense = expenses.find((e) => e.id === id);
 
   if (!expense) {
     res.status(404).json({
@@ -33,7 +33,7 @@ exports.getExpenses = (req, res) => {
 
 exports.getExpenseById = (req, res) => {
   const { id } = req.params;
-  const expense = expenses.find((expense) => expense.id === +id);
+  const expense = expenses.find((e) => e.id === +id);
 
   res.status(200).json({ status: 'success', data: { expense } });
 };
@@ -60,9 +60,26 @@ exports.addExpense = (req, res) => {
 exports.deleteExpense = (req, res) => {
   const id = +req.params.id;
 
-  const updated = expenses.filter((expense) => expense.id !== id);
+  const afterDelete = expenses.filter((e) => e.id !== id);
 
-  fs.writeFile('./data/expenses.json', JSON.stringify(updated), (err) => {
+  fs.writeFile('./data/expenses.json', JSON.stringify(afterDelete), (err) => {
     res.status(204).json({ status: 'success', data: null });
+  });
+};
+
+exports.editExpense = (req, res) => {
+  const id = +req.params.id;
+  const expense = expenses.find((e) => e.id === id);
+
+  const updates = req.body;
+
+  for (let key in updates) {
+    if (expense[key] !== undefined) {
+      expense[key] = updates[key];
+    }
+  }
+
+  fs.writeFile('./data/expenses.json', JSON.stringify(expenses), (err) => {
+    res.status(200).json({ status: 'success', data: expense });
   });
 };
