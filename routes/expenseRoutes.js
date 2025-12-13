@@ -4,6 +4,10 @@ const expenseController = require('../controllers/expenseController');
 const router = express.Router();
 
 router
+  .route('/top-5-highest')
+  .get(expenseController.aliasTopExpenses, expenseController.getExpenses);
+
+router
   .route('/')
   .get(expenseController.getExpenses)
   .post(expenseController.addExpense)

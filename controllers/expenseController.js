@@ -1,5 +1,13 @@
 const Expense = require('../models/expenseModel');
 
+exports.aliasTopExpenses = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.fields = 'description,amount,category,date';
+  req.query.sort = '-amount';
+
+  next();
+};
+
 exports.getExpenses = async (req, res) => {
   try {
     const queryObj = { ...req.query };
