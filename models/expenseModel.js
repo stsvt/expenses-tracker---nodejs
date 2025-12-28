@@ -17,6 +17,7 @@ const schema = new mongoose.Schema(
       required: [true, 'Amount is required'],
       min: 0,
     },
+    tags: [{ type: String }],
     date: {
       type: Date,
       default: Date.now,
