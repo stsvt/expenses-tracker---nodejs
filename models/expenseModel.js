@@ -30,6 +30,17 @@ const schema = new mongoose.Schema(
   },
 );
 
+schema.virtual('daysAgo').get(function () {
+  const day = 24 * 60 * 60 * 1000;
+  const now = new Date();
+
+  const diffDays = Math.round(Math.abs((now - this.date) / day));
+
+  if (diffDays === 0) return 'Today';
+  if (diffDays === 1) return 'Yesterday';
+  if (diffDays >= 2) return `${diffDays} days ago`;
+});
+
 const Expense = mongoose.model('Expense', schema);
 
 module.exports = Expense;
