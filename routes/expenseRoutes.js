@@ -7,6 +7,9 @@ router
   .route('/top-5-highest')
   .get(expenseController.aliasTopExpenses, expenseController.getExpenses);
 
+router.route('/stats').get(expenseController.getExpensesStats);
+router.route('/monthly-plan').get(expenseController.getMonthlyPlan);
+
 router
   .route('/')
   .get(expenseController.getExpenses)
