@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const schema = new mongoose.Schema(
   {
@@ -8,6 +9,7 @@ const schema = new mongoose.Schema(
       maxLength: 50,
       trim: true,
     },
+    slug: String,
     description: {
       type: String,
       maxLength: 300,
@@ -22,6 +24,7 @@ const schema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    active: { type: Boolean, default: true },
   },
   {
     timestamps: true,
@@ -41,6 +44,17 @@ schema.virtual('daysAgo').get(function () {
   if (diffDays >= 2) return `${diffDays} days ago`;
 });
 
+schema.pre('save', function () {
+  this.slug = slugify(this.description, { lower: true });
+});
+
+schema.pre(/^find/, function () {
+  this.find({ active: { $ne: false } });
+});
+
+schema.pre('aggregate', function () {
+  this.pipeline().unshift({ $match: { active: { $ne: false } } });
+});
 const Expense = mongoose.model('Expense', schema);
 
 module.exports = Expense;
