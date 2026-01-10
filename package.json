@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon server.js",
-    "start:prod": "set NODE_ENV=production && nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "cross-env NODE_ENV=production node server.js",
+    "debug": "ndb server.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cross-env": "^10.1.0",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongodb": "^7.0.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
+    "ndb": "^1.1.5",
     "prettier": "^3.7.4"
   }
 }

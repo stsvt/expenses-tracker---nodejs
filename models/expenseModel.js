@@ -21,10 +21,12 @@ const schema = new mongoose.Schema(
           'family',
           'training',
           'transport',
+          'electronics',
+          'entertainment',
           'other',
         ],
         message:
-          'Category is either: health, leisure, home, cafe, education, gifts, groceries, family, training, transport, other',
+          'Category is either: health, leisure, home, cafe, education, gifts, groceries, family, training, transport, electronics, entertainment, other',
       },
     },
     slug: String,

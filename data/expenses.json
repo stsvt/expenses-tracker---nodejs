@@ -8,7 +8,7 @@
   },
   {
     "description": "Grocery shopping at Silpo",
-    "category": "food",
+    "category": "groceries",
     "amount": 840.5,
     "date": "2025-11-11",
     "tags": ["groceries", "essentials", "family"]
@@ -29,21 +29,21 @@
   },
   {
     "description": "Internet bill payment",
-    "category": "utilities",
+    "category": "home",
     "amount": 250,
     "date": "2025-11-15",
     "tags": ["bills", "monthly", "internet"]
   },
   {
     "description": "Coffee and croissant",
-    "category": "food",
+    "category": "cafe",
     "amount": 110,
     "date": "2025-11-16",
     "tags": ["cafe", "leisure", "weekend"]
   },
   {
     "description": "Gym membership",
-    "category": "health",
+    "category": "training",
     "amount": 950,
     "date": "2025-11-17",
     "tags": ["sports", "monthly", "self-care"]
@@ -64,7 +64,7 @@
   },
   {
     "description": "Lunch at restaurant",
-    "category": "food",
+    "category": "cafe",
     "amount": 185,
     "date": "2025-11-21",
     "tags": ["work", "cafe"]
@@ -99,7 +99,7 @@
   },
   {
     "description": "Winter jacket",
-    "category": "clothing",
+    "category": "other",
     "amount": 3200,
     "date": "2025-11-29",
     "tags": ["shopping", "seasonal", "essentials"]
@@ -113,7 +113,7 @@
   },
   {
     "description": "Mobile phone top-up",
-    "category": "utilities",
+    "category": "other",
     "amount": 200,
     "date": "2025-12-02",
     "tags": ["bills", "monthly"]
@@ -127,7 +127,7 @@
   },
   {
     "description": "Supermarket ATB",
-    "category": "food",
+    "category": "groceries",
     "amount": 320,
     "date": "2025-12-05",
     "tags": ["groceries", "essentials"]
