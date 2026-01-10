@@ -1,5 +1,5 @@
 const Expense = require('../models/expenseModel');
-const APIFeatures = require('../utils/apiFeatures');
+const { APIFeatures } = require('../utils/apiFeatures');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
@@ -31,7 +31,7 @@ exports.getExpenseById = catchAsync(async (req, res, next) => {
   const expense = await Expense.findById(id);
 
   if (!expense) {
-    return next(new AppError('No tour found with that ID', 404));
+    return next(new AppError('No expense found with that ID', 404));
   }
 
   res.status(200).json({
@@ -53,7 +53,7 @@ exports.deleteExpense = catchAsync(async (req, res, next) => {
   const expense = await Expense.findByIdAndDelete(id);
 
   if (!expense) {
-    return next(new AppError('No tour found with that ID', 404));
+    return next(new AppError('No expense found with that ID', 404));
   }
 
   res.status(204).json({
@@ -77,7 +77,7 @@ exports.editExpense = catchAsync(async (req, res, next) => {
   });
 
   if (!expense) {
-    return next(new AppError('No tour found with that ID', 404));
+    return next(new AppError('No expense found with that ID', 404));
   }
 
   res.status(200).json({
